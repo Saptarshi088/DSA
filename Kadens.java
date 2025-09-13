@@ -1,6 +1,6 @@
 public class Kadens {
     public static void main(String[] args) {
-        int[] arr = {};
+        int[] arr = {1,2,3,-50,4,5,6};
         System.out.println(kadens(arr));
     }
 
