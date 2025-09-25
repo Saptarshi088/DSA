@@ -5,7 +5,7 @@ public class AnnagramChecker {
         String str1 = "listen";
         String str2 = "silent";
         if (isAnnagram(str1, str2)) {
-            System.out.println("Annagram");
+            System.out.println("Annagram"); 
         } else {
             System.out.println("Not Annagram");
         }
