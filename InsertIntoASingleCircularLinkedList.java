@@ -2,6 +2,32 @@ import java.util.Scanner;
 
 public class InsertIntoASingleCircularLinkedList {
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read existing team ratings
+        String ratingsInput = scanner.nextLine();
+        int[] ratings;
+        if (ratingsInput.isEmpty()) {
+            ratings = new int[0];
+        } else {
+            String[] ratingStrings = ratingsInput.split(",");
+            ratings = new int[ratingStrings.length];
+            for (int i = 0; i < ratingStrings.length; i++) {
+                ratings[i] = Integer.parseInt(ratingStrings[i].trim());
+            }
+        }
+
+        // Read new team's rating
+        int newRating = scanner.nextInt();
+        scanner.close();
+
+        CircularLinkedList list = new CircularLinkedList();
+        list.buildList(ratings);
+        list.insert(newRating);
+        list.printList();
+    }
+
     static class Node {
         int data;
         Node next;
@@ -91,29 +117,4 @@ public class InsertIntoASingleCircularLinkedList {
         }
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Read existing team ratings
-        String ratingsInput = scanner.nextLine();
-        int[] ratings;
-        if (ratingsInput.isEmpty()) {
-            ratings = new int[0];
-        } else {
-            String[] ratingStrings = ratingsInput.split(",");
-            ratings = new int[ratingStrings.length];
-            for (int i = 0; i < ratingStrings.length; i++) {
-                ratings[i] = Integer.parseInt(ratingStrings[i].trim());
-            }
-        }
-
-        // Read new team's rating
-        int newRating = scanner.nextInt();
-        scanner.close();
-
-        CircularLinkedList list = new CircularLinkedList();
-        list.buildList(ratings);
-        list.insert(newRating);
-        list.printList();
-    }
 }
